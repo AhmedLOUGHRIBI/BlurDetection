@@ -61,3 +61,8 @@ The not blurry folder contains now:
 <img width="818" alt="not blurry test" src="https://user-images.githubusercontent.com/55580735/80008085-be4f3e00-84b6-11ea-9751-969f6195d708.PNG">
 
 #####   => The pipeline is accurate.
+
+## NB:
+This method doesn’t perform well on images with focus (it doesn’t differentiate between the background and the object). To do so you may need to specify the object location or perform slicing on the image.
+
+
