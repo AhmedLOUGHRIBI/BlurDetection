@@ -7,7 +7,9 @@ This may work as filter to keep just not blurry images and delete the blurry one
 
 ## Method review:
 You simply take a single channel of an image (presumably grayscale) and convolve it with the following 3 x 3 kernel:
+
 ![detecting_blur_laplacian_kernel](https://user-images.githubusercontent.com/55580735/80007734-39642480-84b6-11ea-8ca6-fc34e36fcc0e.png)
+
 And then take the variance (i.e. standard deviation squared) of the response.
 If the variance falls below a pre-defined threshold, then the image is considered blurry; otherwise, the image is not blurry.
 
@@ -16,6 +18,7 @@ Laplacian operator is used to measure the 2nd derivative of an image. The Laplac
 
 ## Project structure:
 ![Inkedstr project quality check_LI](https://user-images.githubusercontent.com/55580735/80007769-4719aa00-84b6-11ea-9c7f-a5044eadf2b1.jpg)
+
 ### The file LaplacienScoreCalculator.py:
 contains functions that will be used to load the test images and compute the variance of laplacian score.
 ### The file ThresholdTunner.py:
@@ -37,7 +40,9 @@ To do so we will use a validation dataset (2 folders – one for blurry and the 
 
 ### Output:
 Plot showing the distributions of the variance of Laplacien score for these two groups of images:
+
 <img width="320" alt="distr blurry_not blurry" src="https://user-images.githubusercontent.com/55580735/80008004-9b248e80-84b6-11ea-958c-61ccd327fb85.png">
+
 The distribution of this metric for the blurry images is represented in blue.
 The distribution of this metric for the not blurry images is represented in orange.
 
@@ -45,11 +50,17 @@ The distribution of this metric for the not blurry images is represented in oran
 
 ## Testing the pipeline using a threshold of 150:
 We will test the pipeline on a folder containing test images mixed (blurry and not blurry).
+
 <img width="824" alt="test images mixed blurry non blurry" src="https://user-images.githubusercontent.com/55580735/80008034-a8417d80-84b6-11ea-8d4a-8e26ab5ec5f7.PNG">
+
 And then we run the command line: python main.py
 ### Output results:
 Blurry folder contains now:
+
 <img width="818" alt="blurry tests" src="https://user-images.githubusercontent.com/55580735/80008065-b5f70300-84b6-11ea-832a-071c84fe2933.PNG">
+
 The not blurry folder contains now:
+
 <img width="818" alt="not blurry test" src="https://user-images.githubusercontent.com/55580735/80008085-be4f3e00-84b6-11ea-9751-969f6195d708.PNG">
+
 #####   => The pipeline is accurate.
