@@ -1,5 +1,5 @@
 # BlurDetection
-This may work as filter to keep just not blurry images and delete the blurry ones.
+The project aims to detect if an image is blurry or not, it may work as filter to keep just not blurry images and delete the blurry ones.
 
 ## The pipeline contains 2 parts:
 1.	Compute the metric: variance of the Laplacian score.
@@ -40,7 +40,6 @@ To do so we will use a validation dataset (2 folders – one for blurry and the 
 
 ### Output:
 Plot showing the distributions of the variance of Laplacien score for these two groups of images:
-
 <img width="320" alt="distr blurry_not blurry" src="https://user-images.githubusercontent.com/55580735/80008004-9b248e80-84b6-11ea-958c-61ccd327fb85.png">
 
 The distribution of this metric for the blurry images is represented in blue.
@@ -50,9 +49,7 @@ The distribution of this metric for the not blurry images is represented in oran
 
 ## Testing the pipeline using a threshold of 150:
 We will test the pipeline on a folder containing test images mixed (blurry and not blurry).
-
 <img width="824" alt="test images mixed blurry non blurry" src="https://user-images.githubusercontent.com/55580735/80008034-a8417d80-84b6-11ea-8d4a-8e26ab5ec5f7.PNG">
-
 And then we run the command line: python main.py
 ### Output results:
 Blurry folder contains now:
@@ -62,5 +59,4 @@ Blurry folder contains now:
 The not blurry folder contains now:
 
 <img width="818" alt="not blurry test" src="https://user-images.githubusercontent.com/55580735/80008085-be4f3e00-84b6-11ea-9751-969f6195d708.PNG">
-
 #####   => The pipeline is accurate.
